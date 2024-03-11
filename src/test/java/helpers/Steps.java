@@ -66,7 +66,7 @@ public class Steps {
         return given().header("Content-type", "application/json").when().get(ordersPath);
     }
 
-    @Step("Get orders wit authorization step")
+    @Step("Get orders with authorization step")
     public static Response getOrdersWithAuth(String token) {
         return given().header("Content-type", "application/json")
                 .and().header("Authorization", token)
