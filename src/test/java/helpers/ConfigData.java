@@ -4,7 +4,6 @@ public class ConfigData {
     private static final String baseUri = "https://stellarburgers.nomoreparties.site";
     private static final String createUserPath = "/api/auth/register";
     private static final String authUserPath = "/api/auth/login";
-    private static final String logoutPath = "/api/auth/login";
     private static final String renewTokenPath = "/api/auth/token";
     private static final String userDataPath = "/api/auth/user";
     private static final String ordersPath = "/api/orders";
@@ -20,10 +19,6 @@ public class ConfigData {
 
     public static String returnAuthPath() {
         return authUserPath;
-    }
-
-    public static String returnLogoutPath() {
-        return logoutPath;
     }
 
     public static String returnRenewTokenPath() {

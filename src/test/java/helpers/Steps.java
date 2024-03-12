@@ -11,7 +11,6 @@ import static io.restassured.RestAssured.given;
 public class Steps {
     private static final String createUserPath = ConfigData.returnCreateUserPath();
     private static final String authUserPath = ConfigData.returnAuthPath();
-    private static final String logoutPath = ConfigData.returnLogoutPath();
     private static final String renewTokenPath = ConfigData.returnRenewTokenPath();
     private static final String userPath = ConfigData.returnUserPath();
     private static final String ordersPath = ConfigData.returnOrdersPath();
