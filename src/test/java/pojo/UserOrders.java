@@ -4,7 +4,7 @@ import java.util.List;
 
 public class UserOrders {
     private boolean success;
-    List<UserOrder> orders;
+    private List<UserOrder> orders;
 
     public boolean isSuccess() {
         return success;
