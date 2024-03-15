@@ -20,60 +20,93 @@ public class Steps {
     @Step("Create user step")
     public static Response createUser(String email, String password, String name) {
         user = new User(email, password, name);
-        return given().header("Content-type", "application/json").and().body(user).when().post(createUserPath);
+        return given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(user)
+                .when()
+                .post(createUserPath);
     }
 
     @Step("Login user step")
     public static Response loginUser(String email, String password) {
         User loginUser = new User(email, password);
-        return given().header("Content-type", "application/json").and().body(loginUser).when()
+        return given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(loginUser)
+                .when()
                 .post(authUserPath);
     }
 
     @Step("Get access token step")
     public static String getAccessToken(Response response) {
-        return response.body().as(UserAuth.class).getAccessToken();
+        return response
+                .body()
+                .as(UserAuth.class)
+                .getAccessToken();
     }
 
     @Step("Delete User step")
     public static void deleteUser(String accessToken) {
-        given().header("Content-type", "application/json").and()
-                .header("Authorization", accessToken).when().delete(userPath);
+        given()
+                .header("Content-type", "application/json")
+                .and()
+                .header("Authorization", accessToken)
+                .when()
+                .delete(userPath);
     }
 
     @Step("Change User data with authorization step")
     public static Response changeUserDataWithAuthorization(String newEmail, String newPassword,
                                                            String newName, String token) {
         user = new User(newEmail, newPassword, newName);
-        return given().header("Content-type", "application/json")
+        return given()
+                .header("Content-type", "application/json")
                 .and()
                 .header("Authorization", token)
                 .and()
-                .body(user).when().patch(userPath);
+                .body(user)
+                .when()
+                .patch(userPath);
     }
 
     @Step("Change User data w/o authorization step")
     public static Response changeUserDataWoAuthorization(String newEmail, String newPassword, String newName) {
         user = new User(newEmail, newPassword, newName);
-        return given().header("Content-type", "application/json").and()
-                .body(user).when().patch(userPath);
+        return given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(user)
+                .when()
+                .patch(userPath);
     }
 
     @Step("Get orders without authorization step")
     public static Response getOrdersWoAuth() {
-        return given().header("Content-type", "application/json").when().get(ordersPath);
+        return given()
+                .header("Content-type", "application/json")
+                .when()
+                .get(ordersPath);
     }
 
     @Step("Get orders with authorization step")
     public static Response getOrdersWithAuth(String token) {
-        return given().header("Content-type", "application/json")
-                .and().header("Authorization", token)
-                .when().get(ordersPath);
+        return given()
+                .header("Content-type", "application/json")
+                .and()
+                .header("Authorization", token)
+                .when()
+                .get(ordersPath);
     }
 
     @Step("Get list of Ingredients step")
     public static List<Data> ingredientsList() {
-        Response ingrResponse = given().header("Content-type", "application/json").when().get(ingredientsPath);
+        Response ingrResponse =
+                given()
+                        .header("Content-type", "application/json")
+                        .when()
+                        .get(ingredientsPath);
         return ingrResponse.getBody().as(ListOfIngredients.class).getData();
     }
 
@@ -115,8 +148,15 @@ public class Steps {
 
     @Step("Create order with Ingredient step")
     public static Response createOrderWithAuth(Ingredient ingredients, String token) {
-        return given().header("Content-type", "application/json").and().header("Authorization", token).and()
-                .body(ingredients).when().post(ordersPath);
+        return
+                given()
+                        .header("Content-type", "application/json")
+                        .and()
+                        .header("Authorization", token)
+                        .and()
+                        .body(ingredients)
+                        .when()
+                        .post(ordersPath);
     }
 
     @Step("Get order id")
@@ -127,7 +167,12 @@ public class Steps {
 
     @Step("Create order without ingredients step")
     public static Response createOrderWoAuth(Ingredient ingredient) {
-        return given().header("Content-type", "application/json")
-                .and().body(ingredient).when().post(ordersPath);
+        return
+                given()
+                        .header("Content-type", "application/json")
+                        .and()
+                        .body(ingredient)
+                        .when()
+                        .post(ordersPath);
     }
 }
