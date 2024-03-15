@@ -9,12 +9,11 @@ import java.util.*;
 import static io.restassured.RestAssured.given;
 
 public class Steps {
-    private static final String createUserPath = ConfigData.returnCreateUserPath();
-    private static final String authUserPath = ConfigData.returnAuthPath();
-    private static final String renewTokenPath = ConfigData.returnRenewTokenPath();
-    private static final String userPath = ConfigData.returnUserPath();
-    private static final String ordersPath = ConfigData.returnOrdersPath();
-    private static final String ingredientsPath = ConfigData.returnIngredientsPath();
+    private static final String createUserPath = ConfigData.CREATE_USER_PATH;
+    private static final String authUserPath = ConfigData.AUTH_USER_PATH;
+    private static final String userPath = ConfigData.USER_DATA_PATH;
+    private static final String ordersPath = ConfigData.ORDERS_PATH;
+    private static final String ingredientsPath = ConfigData.INGREDIENTS_PATH;
     private static int index;
     private static User user;
 

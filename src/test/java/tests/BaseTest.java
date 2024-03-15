@@ -8,7 +8,7 @@ import io.restassured.RestAssured;
 import org.junit.Before;
 
 public class BaseTest {
-    private final String baseUri = ConfigData.returnBaseUri();
+    private final String baseUri = ConfigData.BASE_URI;
     protected String successField;
     protected String messageField;
     protected String message;
