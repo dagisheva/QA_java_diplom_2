@@ -1,39 +1,39 @@
 package helpers;
 
 public class ConfigData {
-    private static final String baseUri = "https://stellarburgers.nomoreparties.site";
-    private static final String createUserPath = "/api/auth/register";
-    private static final String authUserPath = "/api/auth/login";
-    private static final String renewTokenPath = "/api/auth/token";
-    private static final String userDataPath = "/api/auth/user";
-    private static final String ordersPath = "/api/orders";
-    private static final String ingredientsPath = "/api/ingredients";
+    private static final String BASE_URI = "https://stellarburgers.nomoreparties.site";
+    private static final String CREATE_USER_PATH = "/api/auth/register";
+    private static final String AUTH_USER_PATH = "/api/auth/login";
+    private static final String RENEW_TOKEN_PATH = "/api/auth/token";
+    private static final String USER_DATA_PATH = "/api/auth/user";
+    private static final String ORDERS_PATH = "/api/orders";
+    private static final String INGREDIENTS_PATH = "/api/ingredients";
 
     public static String returnBaseUri() {
-        return baseUri;
+        return BASE_URI;
     }
 
     public static String returnCreateUserPath() {
-        return createUserPath;
+        return CREATE_USER_PATH;
     }
 
     public static String returnAuthPath() {
-        return authUserPath;
+        return AUTH_USER_PATH;
     }
 
     public static String returnRenewTokenPath() {
-        return renewTokenPath;
+        return RENEW_TOKEN_PATH;
     }
 
     public static String returnUserPath() {
-        return userDataPath;
+        return USER_DATA_PATH;
     }
 
     public static String returnOrdersPath() {
-        return ordersPath;
+        return ORDERS_PATH;
     }
 
     public static String returnIngredientsPath() {
-        return ingredientsPath;
+        return INGREDIENTS_PATH;
     }
 }
