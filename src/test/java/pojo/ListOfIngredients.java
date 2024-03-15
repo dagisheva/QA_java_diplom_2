@@ -1,24 +1,11 @@
 package pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class ListOfIngredients {
-    private boolean success;
-    List<Data> data;
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public List<Data> getData() {
-        return data;
-    }
-
-    public void setData(List<Data> data) {
-        this.data = data;
-    }
+    @Getter @Setter private boolean success;
+    @Getter @Setter private List<Data> data;
 }

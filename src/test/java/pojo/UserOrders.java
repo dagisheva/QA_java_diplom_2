@@ -1,24 +1,11 @@
 package pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class UserOrders {
-    private boolean success;
-    private List<UserOrder> orders;
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public List<UserOrder> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<UserOrder> orders) {
-        this.orders = orders;
-    }
+    @Getter @Setter private boolean success;
+    @Getter @Setter private List<UserOrder> orders;
 }

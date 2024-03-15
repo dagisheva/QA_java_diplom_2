@@ -1,31 +1,10 @@
 package pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Data {
-    private String _id;
-    private String name;
-    private String type;
-
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    @Getter @Setter private String _id;
+    @Getter @Setter private String name;
+    @Getter @Setter private String type;
 }

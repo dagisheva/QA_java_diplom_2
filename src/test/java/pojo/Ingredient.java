@@ -1,19 +1,13 @@
 package pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class Ingredient {
-    private List<String> ingredients;
-
+    @Getter @Setter private List<String> ingredients;
     public Ingredient(List<String> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 }
